@@ -1,0 +1,32 @@
+<hinv-header></hinv-header>
+
+<!-- {{rooms$ | async|json}} -->
+<div [hidden]="hideRooms">
+  NUmber of rooms:
+  <div [innerText]="noOfRooms"></div>
+</div>
+
+<!-- {{roomList | json}} -->
+<div *ngIf="rooms.availableRooms>0">
+  
+</div>
+<div>
+  <button routerLink="add">Add room</button>
+</div>
+<div>
+  number of rooms{{roomCount$|async}}
+</div>
+
+<!-- <div *ngIf="hideRooms">
+  
+  <hinv-rooms-list [rooms]="roomList" (selectedRoom)="selectRoom($event)" [title]="title"></hinv-rooms-list>
+</div> -->
+<div *ngIf="rooms$|async as rooms">
+  
+  <hinv-rooms-list [rooms]="rooms" (selectedRoom)="selectRoom($event)" [title]="title"></hinv-rooms-list>
+</div>
+
+<button (click)="toggle()">Toggle</button>
+<button (click)="editRoom()">"Edit rooms"</button>
+<button (click)="deleteRoom()">"delete rooms"</button>
+<router-outlet></router-outlet>

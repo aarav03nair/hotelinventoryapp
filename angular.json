@@ -19,7 +19,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "hinv",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -37,6 +37,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -67,12 +68,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+         
           "configurations": {
             "production": {
               "buildTarget": "hotelinventoryapp:build:production"
             },
             "development": {
-              "buildTarget": "hotelinventoryapp:build:development"
+              "buildTarget": "hotelinventoryapp:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -97,6 +100,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -104,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3950fe0b-edce-4ee2-967f-0ec55176e4c2"
   }
 }

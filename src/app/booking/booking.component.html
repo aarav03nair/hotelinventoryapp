@@ -1,0 +1,69 @@
+<p>booking works!</p>
+{{ bookingForm.value | json }}
+{{ bookingForm.pristine | json }}
+{{ bookingForm.dirty | json }}
+
+<form class="example-form" [formGroup]="bookingForm">
+  <mat-form-field class="example-full-width">
+    <mat-label>RoomId</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="'roomNumber'"
+      placeholder="Ex. 12523"
+    />
+    <!-- <mat-hint>Errors appear instantly!</mat-hint>
+    @if (emailFormControl.hasError('email') &&
+    !emailFormControl.hasError('required')) {
+    <mat-error>Please enter a valid email address</mat-error>
+    } @if (emailFormControl.hasError('required')) {
+    <mat-error>Email is <strong>required</strong></mat-error>
+    } -->
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>RoomId</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="'roomNumber'"
+      placeholder="Ex. 12523"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>RoomType</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="'roomType'"
+      placeholder="Ex. AC"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Amenities</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="'amenities'"
+      placeholder="Ex. AC,fan"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>price</mat-label>
+    <input
+      type="number"
+      matInput
+      formControlName="'price'"
+      placeholder="Ex. Rs. 5000"
+    />
+  </mat-form-field>
+
+  <mat-label>CheckIn date</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="'checkinTime'" />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</form>
